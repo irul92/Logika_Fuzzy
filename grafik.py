@@ -5,10 +5,6 @@ import matplotlib.pyplot as plt
 usia = np.linspace(0, 150, 3000)
 
 
-# ==========================================
-# FUNGSI KEANGGOTAAN TRAPESIUM
-# ==========================================
-
 def fungsi_trapesium(usia, a, b, c, d):
 
     nilai = np.zeros_like(usia)
@@ -30,10 +26,6 @@ def fungsi_trapesium(usia, a, b, c, d):
     return nilai
 
 
-# ==========================================
-# FUNGSI SETIAP KATEGORI USIA
-# ==========================================
-
 # Bayi / Balita
 bayi = fungsi_trapesium(usia, 0, 3, 3, 5)
 
@@ -49,13 +41,8 @@ pemuda = fungsi_trapesium(usia, 15, 20, 20, 24)
 # Dewasa
 dewasa = fungsi_trapesium(usia, 20, 40, 40, 65)
 
-# Lansia
+# Lanjut usia / Lansia
 lansia = fungsi_trapesium(usia, 65, 85, 85, 95)
-
-
-# ==========================================
-# MEMBUAT GRAFIK
-# ==========================================
 
 plt.figure(figsize=(14, 7))
 
@@ -95,25 +82,13 @@ plt.plot(
     color="brown"
 )
 
-
-# ==========================================
-# PENGATURAN GRAFIK
-# ==========================================
-
 plt.title("Fungsi Keanggotaan Usia (Trapesium)")
-
 plt.xlabel("Usia (Tahun)")
-
 plt.ylabel("Derajat Keanggotaan (μ)")
-
 plt.xlim(0, 150)
-
 plt.ylim(0, 1.05)
-
 plt.xticks(np.arange(0, 151, 5))
-
 plt.yticks(np.arange(0, 1.1, 0.2))
-
 plt.grid(
     True,
     linestyle="--",
@@ -121,7 +96,5 @@ plt.grid(
 )
 
 plt.legend()
-
 plt.tight_layout()
-
 plt.show()
